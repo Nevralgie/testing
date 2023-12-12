@@ -50,7 +50,7 @@ resource "azurerm_lb_probe" "probe" {
 }
 
 resource "azurerm_lb_nat_rule" "natrules" {
-  count                          = var.environment == "Prod" ? var.count_number : null
+  count                          = var.environment == "Prod" ? var.count_number : 0
   resource_group_name            = azurerm_resource_group.kube.name
   loadbalancer_id                = azurerm_lb.klb.id
   name                           = "SSHAccess${count.index}"
@@ -61,7 +61,7 @@ resource "azurerm_lb_nat_rule" "natrules" {
 }
 
 resource "azurerm_network_interface_nat_rule_association" "natrules_association" {
-  count                 = var.environment == "Prod" ? var.count_number : null
+  count                 = var.environment == "Prod" ? var.count_number : 0
   network_interface_id  = azurerm_network_interface.kwk[count.index].id
   ip_configuration_name = "ipConfiguration${count.index}"
   nat_rule_id           = azurerm_lb_nat_rule.natrules[count.index].id
