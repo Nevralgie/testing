@@ -1,6 +1,7 @@
 variable "prod_vm_sku" {
   default = {
     "Prod_env" = "Standard_D2ds_v4" ,
+    "Dev_env"  = "Standard_B1ms"
   }
 }
 
@@ -8,6 +9,7 @@ variable "prod_db_sku" {
   type = map(string)
   default = {
     "Prod_env" = "GP_Standard_D2ads_v5" ,
+    "Dev_env"  = "B_Standard_B1s"
   }
 }
 
