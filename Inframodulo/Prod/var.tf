@@ -8,7 +8,6 @@ variable "prod_db_sku" {
   type = map(string)
   default = {
     "Prod_env" = "GP_Standard_D2ads_v5" ,
-    #"Dev_env" = "Standard_B1s"
   }
 }
 
