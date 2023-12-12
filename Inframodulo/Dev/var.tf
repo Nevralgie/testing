@@ -1,11 +1,11 @@
-variable "prod_vm_sku" {
+variable "dev_vm_sku" {
   type = map(string)
   default = {
     "Dev_env" = "Standard_B1ms"
   }
 }
 
-variable "prod_db_sku" {
+variable "dev_db_sku" {
   type = map(string)
   default = {
     "Dev_env" = "B_Standard_B1s"
