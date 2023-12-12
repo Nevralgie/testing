@@ -17,7 +17,7 @@ output "Lb_Pubip" {
 }
 
 output "NAT_ssh_ports" {
-  value = azurerm_lb_nat_rule.natrules.frontend_port[*]
+  value = azurerm_lb_nat_rule.natrules[*].frontend_port
 }
 
 output "Vms_admin_username" {
