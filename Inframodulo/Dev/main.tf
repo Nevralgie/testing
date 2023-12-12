@@ -1,5 +1,5 @@
 module "infra" {
-  source = "./infra"
+  source = "../infra"
   vm_sku = var.dev_vm_sku
   db_sku = var.dev_db_sku
   admin_db = var.admin_db
